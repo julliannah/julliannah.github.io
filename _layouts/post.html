@@ -26,6 +26,7 @@
         <section class="card neumorphism-card-big">
             <h2>{{ page.title }}</h2>
             <p class="description" data-aos="fade-down">{{page.content}}</p>
+            <h5 style="font-style: italic; color: lightgreen">Published date: {{ page.date | date: "%-d %B %Y" }}</h5>
         </section>
         {% endif %}
     </div>
