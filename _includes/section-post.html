@@ -1,0 +1,15 @@
+<h1 class="title">{{site.post_title}}</h1>
+<ul>
+  {% for post in site.posts reversed %}
+  <li>
+    <h2 id="post-title">{{ post.title }}</h2>
+    {% if post.content.size > post.excerpt.size %}
+      {{post.excerpt}}
+      <a id="read-more" href="{{ post.baseurl }}{{ post.url }}" target="_blank">Read more</a>
+    {% else %}
+      {{post.content}}
+    {% endif %}
+    <p style="font-size: 20px"> Published date: {{ post.date | date: "%-d %B %Y" }}</p>
+  </li>
+  {% endfor %}
+</ul>
